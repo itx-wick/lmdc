@@ -1,19 +1,15 @@
 import axios from 'axios';
 
-// import AsyncStorage from '@react-native-async-storage/async-storage';
-
 let BASE_URL_SERVER;
 export const postApiCall = async (endPoint, data) => {
   //DEV
-  // BASE_URL_SERVER = 'http://dev.lmdc.edu.pk/api/app.php/';
+  BASE_URL_SERVER = 'http://dev.lmdc.edu.pk/api/app.php/';
   //LIVE
-  BASE_URL_SERVER = 'https://webportal.lmdc.edu.pk/api/app.php/';
-  console.log(BASE_URL_SERVER + `${endPoint}`);
+  // BASE_URL_SERVER = 'https://webportal.lmdc.edu.pk/api/app.php/';
   return new Promise((resolve, reject) => {
     let headers = {
       'Content-Type': 'application/json',
     };
-    console.log('Data', data);
     axios
       .post(BASE_URL_SERVER + `${endPoint}`, data, {headers: headers})
       .then(resp => {
