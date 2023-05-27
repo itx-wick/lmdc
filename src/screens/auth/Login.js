@@ -145,11 +145,11 @@ function Login(props) {
       .catch(err => {
         dispatch(setLoader(false));
         if (err.response) {
-          console.log(err.response.data.message);
+          console.log('Err Message', err.response.data.message);
         } else if (err.request) {
-          console.log(err.request);
+          console.log('Err Request', err.request);
         } else {
-          console.log(err);
+          console.log('Err', err);
         }
       });
   };
